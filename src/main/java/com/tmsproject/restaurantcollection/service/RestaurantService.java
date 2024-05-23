@@ -1,6 +1,8 @@
 package com.tmsproject.restaurantcollection.service;
 
 import com.tmsproject.restaurantcollection.domain.RestaurantEntity;
+import com.tmsproject.restaurantcollection.exception.DuplicateEntityException;
+import com.tmsproject.restaurantcollection.repository.RestaurantRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
