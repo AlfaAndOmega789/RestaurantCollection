@@ -7,12 +7,12 @@ import com.tmsproject.restaurantcollection.mapper.EntityMapper;
 import com.tmsproject.restaurantcollection.service.BaseService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.persistence.EntityNotFoundException;
-import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,7 +28,7 @@ public class AbstractEntityController<T extends BaseDto, E extends BaseEntity, S
     }
 
     @Override
-    public ResponseEntity<?> create(@Valid @RequestBody T dto) {
+    public ResponseEntity<?> create(@Validated @RequestBody T dto) {
         E entity = service.create(mapper.fromDto(dto));
 
         URI location = ServletUriComponentsBuilder

@@ -17,6 +17,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -26,7 +27,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.validation.Valid;
+
 import java.net.URI;
 import java.util.Collections;
 import java.util.List;
@@ -47,7 +48,7 @@ public class RestaurantController extends AbstractEntityController<RestaurantDto
             @ApiResponse(responseCode = "400", description = "Payload validation failed."),
             @ApiResponse(responseCode = "405", description = "Operation is not allowed.")})
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateById(@PathVariable Long id, @Valid @RequestBody RestaurantShortDto shortDto) {
+    public ResponseEntity<?> updateById(@PathVariable Long id, @Validated @RequestBody RestaurantShortDto shortDto) {
         RestaurantDto restaurantDto = RestaurantDto.builder()
                 .id(id)
                 .averageRating(shortDto.getAverageRating())
