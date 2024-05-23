@@ -3,8 +3,8 @@ spring:
     name: "Restaurant Collection"
   datasource:
     url: jdbc:tc:postgresql:13.3://localhost/test
-    username: test
-    password: test
+    username: postgres
+    password: postgres
     driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
   jpa:
     hibernate:

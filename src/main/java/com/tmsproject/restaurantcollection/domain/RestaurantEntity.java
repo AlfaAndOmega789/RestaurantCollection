@@ -20,7 +20,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @SuperBuilder
 @FieldNameConstants
-public class RestaurantEntity {
+public class RestaurantEntity extends BaseEntity {
 
     public static final String TABLE_NAME = "restaurants";
 
