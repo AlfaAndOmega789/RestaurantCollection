@@ -17,7 +17,8 @@ import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class AbstractEntityController <T extends BaseDto, E extends BaseEntity, S extends BaseService<E>> implements BaseController<T> {
+public class AbstractEntityController<T extends BaseDto, E extends BaseEntity, S extends BaseService<E>> implements BaseController<T> {
+
     protected final S service;
     protected final EntityMapper<E, T> mapper;
 
