@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-public interface BaseController {
+public interface BaseController<T extends BaseDto> {
+
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Resource was created.",
                     content = @Content(schema = @Schema(type = "object", implementation = BaseDto.class))),
