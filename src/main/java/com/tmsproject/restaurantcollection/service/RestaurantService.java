@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @Slf4j
 @Service
-public class RestaurantService {
+public class RestaurantService implements BaseService<RestaurantEntity> {
 
     private final RestaurantRepository repository;
 
