@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 import static com.tmsproject.restaurantcollection.domain.ResIdSeq.RES_SEQUENCE_NAME;
 import static com.tmsproject.restaurantcollection.domain.ResIdSeq.RES_SEQ_GENERATOR;

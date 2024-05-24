@@ -14,8 +14,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
+/**
+ * Базовый интерфейс контроллера для управления CRUD операциями.
+ *
+ * @param <T> Тип DTO (Data Transfer Object).
+ */
 public interface BaseController<T extends BaseDto> {
 
+    /**
+     * Создает новый ресурс.
+     *
+     * @param dto DTO для создания нового ресурса.
+     * @return Ответ с HTTP статусом и информацией о созданном ресурсе.
+     */
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Resource was created.",
                     content = @Content(schema = @Schema(type = "object", implementation = BaseDto.class))),
@@ -24,6 +35,12 @@ public interface BaseController<T extends BaseDto> {
     @PostMapping
     ResponseEntity<?> create(@RequestBody T dto);
 
+    /**
+     * Удаляет ресурс по его ID.
+     *
+     * @param id ID удаляемого ресурса.
+     * @return Ответ с HTTP статусом NO_CONTENT.
+     */
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Resource was deleted."),
             @ApiResponse(responseCode = "404", description = "Resource not found."),
@@ -32,6 +49,11 @@ public interface BaseController<T extends BaseDto> {
     @DeleteMapping("/{id}")
     ResponseEntity<Void> delete(@PathVariable Long id);
 
+    /**
+     * Возвращает список всех ресурсов.
+     *
+     * @return Список всех DTO.
+     */
     @GetMapping
     List<T> findAll();
 }
