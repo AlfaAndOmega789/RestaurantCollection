@@ -1,0 +1,103 @@
+2024-05-24T15:36:33.897+03:00  INFO 2576 --- [main] c.t.r.RestaurantCollectionApplication    : Starting RestaurantCollectionApplication using Java 21.0.2 with PID 2576 (C:\Project\RestaurantCollection\RestaurantCollection\target\classes started by TMS-58 in C:\Project\RestaurantCollection\RestaurantCollection)
+2024-05-24T15:36:33.921+03:00  INFO 2576 --- [main] c.t.r.RestaurantCollectionApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-05-24T15:36:35.807+03:00  INFO 2576 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-24T15:36:35.808+03:00  INFO 2576 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-05-24T15:36:35.905+03:00  INFO 2576 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-24T15:36:36.064+03:00  INFO 2576 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-24T15:36:36.289+03:00  INFO 2576 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@55c57422
+2024-05-24T15:36:36.291+03:00  INFO 2576 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-24T15:36:36.534+03:00  INFO 2576 --- [main] liquibase.database                       : Set default schema name to public
+2024-05-24T15:36:37.262+03:00  INFO 2576 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2024-05-24T15:36:37.301+03:00  INFO 2576 --- [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2024-05-24T15:36:37.303+03:00  INFO 2576 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2024-05-24T15:36:37.307+03:00  INFO 2576 --- [main] liquibase.util                           : UPDATE SUMMARY
+2024-05-24T15:36:37.313+03:00  INFO 2576 --- [main] liquibase.util                           : Run:                          0
+2024-05-24T15:36:37.313+03:00  INFO 2576 --- [main] liquibase.util                           : Previously run:               1
+2024-05-24T15:36:37.313+03:00  INFO 2576 --- [main] liquibase.util                           : Filtered out:                 0
+2024-05-24T15:36:37.313+03:00  INFO 2576 --- [main] liquibase.util                           : -------------------------------
+2024-05-24T15:36:37.313+03:00  INFO 2576 --- [main] liquibase.util                           : Total change sets:            1
+2024-05-24T15:36:37.314+03:00  INFO 2576 --- [main] liquibase.util                           : Update summary generated
+2024-05-24T15:36:37.350+03:00  INFO 2576 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2024-05-24T15:36:37.351+03:00  INFO 2576 --- [main] liquibase.command                        : Command execution complete
+2024-05-24T15:36:37.436+03:00  INFO 2576 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-24T15:36:37.521+03:00  INFO 2576 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.25.Final
+2024-05-24T15:36:37.525+03:00  INFO 2576 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2024-05-24T15:36:37.952+03:00  WARN 2576 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-24T15:36:38.334+03:00  INFO 2576 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-24T15:36:38.548+03:00  INFO 2576 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-24T15:36:38.555+03:00  INFO 2576 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-24T15:36:38.559+03:00  INFO 2576 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-05-24T15:36:38.594+03:00 ERROR 2576 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'restaurantController' defined in file [C:\Project\RestaurantCollection\RestaurantCollection\target\classes\com\tmsproject\restaurantcollection\controller\RestaurantController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'restaurantService' defined in file [C:\Project\RestaurantCollection\RestaurantCollection\target\classes\com\tmsproject\restaurantcollection\service\RestaurantService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'restaurantRepository' defined in com.tmsproject.restaurantcollection.repository.RestaurantRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Not a managed type: class com.tmsproject.restaurantcollection.domain.RestaurantEntity
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:794) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:236) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1350) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1187) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:558) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952) ~[spring-context-6.0.21.jar:6.0.21]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615) ~[spring-context-6.0.21.jar:6.0.21]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.12.jar:3.1.12]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:739) ~[spring-boot-3.1.12.jar:3.1.12]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:441) ~[spring-boot-3.1.12.jar:3.1.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325) ~[spring-boot-3.1.12.jar:3.1.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1327) ~[spring-boot-3.1.12.jar:3.1.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1316) ~[spring-boot-3.1.12.jar:3.1.12]
+	at com.tmsproject.restaurantcollection.RestaurantCollectionApplication.main(RestaurantCollectionApplication.java:10) ~[classes/:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'restaurantService' defined in file [C:\Project\RestaurantCollection\RestaurantCollection\target\classes\com\tmsproject\restaurantcollection\service\RestaurantService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'restaurantRepository' defined in com.tmsproject.restaurantcollection.repository.RestaurantRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Not a managed type: class com.tmsproject.restaurantcollection.domain.RestaurantEntity
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:794) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:236) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1350) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1187) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:558) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:903) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:781) ~[spring-beans-6.0.21.jar:6.0.21]
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'restaurantRepository' defined in com.tmsproject.restaurantcollection.repository.RestaurantRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Not a managed type: class com.tmsproject.restaurantcollection.domain.RestaurantEntity
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1768) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:596) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:903) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:781) ~[spring-beans-6.0.21.jar:6.0.21]
+	... 33 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Not a managed type: class com.tmsproject.restaurantcollection.domain.RestaurantEntity
+	at org.hibernate.metamodel.model.domain.internal.JpaMetamodelImpl.managedType(JpaMetamodelImpl.java:192) ~[hibernate-core-6.2.25.Final.jar:6.2.25.Final]
+	at org.hibernate.metamodel.model.domain.internal.MappingMetamodelImpl.managedType(MappingMetamodelImpl.java:467) ~[hibernate-core-6.2.25.Final.jar:6.2.25.Final]
+	at org.hibernate.metamodel.model.domain.internal.MappingMetamodelImpl.managedType(MappingMetamodelImpl.java:97) ~[hibernate-core-6.2.25.Final.jar:6.2.25.Final]
+	at org.springframework.data.jpa.repository.support.JpaMetamodelEntityInformation.<init>(JpaMetamodelEntityInformation.java:82) ~[spring-data-jpa-3.1.12.jar:3.1.12]
+	at org.springframework.data.jpa.repository.support.JpaEntityInformationSupport.getEntityInformation(JpaEntityInformationSupport.java:69) ~[spring-data-jpa-3.1.12.jar:3.1.12]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getEntityInformation(JpaRepositoryFactory.java:246) ~[spring-data-jpa-3.1.12.jar:3.1.12]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:211) ~[spring-data-jpa-3.1.12.jar:3.1.12]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:194) ~[spring-data-jpa-3.1.12.jar:3.1.12]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:81) ~[spring-data-jpa-3.1.12.jar:3.1.12]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:317) ~[spring-data-commons-3.1.12.jar:3.1.12]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:279) ~[spring-data-commons-3.1.12.jar:3.1.12]
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:245) ~[spring-data-commons-3.1.12.jar:3.1.12]
+	at org.springframework.data.util.Lazy.get(Lazy.java:114) ~[spring-data-commons-3.1.12.jar:3.1.12]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:285) ~[spring-data-commons-3.1.12.jar:3.1.12]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:132) ~[spring-data-jpa-3.1.12.jar:3.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1815) ~[spring-beans-6.0.21.jar:6.0.21]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1764) ~[spring-beans-6.0.21.jar:6.0.21]
+	... 44 common frames omitted
+
